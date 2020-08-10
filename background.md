@@ -1,11 +1,24 @@
-# Background and Overview
+## Tony Wu, Andrew Elmore, Edward Garrett
 
-The biggest financial decision many individuals will make involves purchasing real estate. Be it their first house or secondary investment properties, lots of information need to be considered before making a purchase. There are a HUGE numbers of factors! \
+## August 7-August 9
+- investigate API to collect data - everyone
+- backend user auth - everyone
 
-This application is focused on providing a web application that allows user to visualize and aggregate data of their choosing to see what different houses compare to one another. \
 
-We will need to: 
-* Incorporate zillow api data to obtain relevant information
-* Build a database to store housing data from different areas
-* Construct a web application to visualize and compare datasets
-* Export this data in a user-friendly manner
+## Day 1
+* Create the frontend for user authentication and landing page - Andrew Elmore
+* Connect to Zillow API and extract data - Tony 
+## Day 2
+* Create the frontend for the search bar - Andrew Elmore
+* Filter extracted data by area - Tony
+## Day 3
+* Create the frontend for the page associated with an individual region - Andrew Elmore
+* Connect extracted individual region data with frontend - Tony
+
+## Day 4
+* Create the frontend comparison page for different individual properties - Andrew Elmore
+* Create backend comparison calculators - Tony
+
+## Day 5
+* Create the frontend to export comparison and individual region pages to a pdf.
+* Format data to be ready for export - Tony
