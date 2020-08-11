@@ -78,4 +78,4 @@ React/node.js should be able to display retrieved API data to display both curre
 * Implement simple and UI to easily manipulate data - Edward and Andrew
 ## Day 5
 * Create the frontend to export comparison and individual region pages to a pdf.
-* Format data to be ready for export - Tony
+
