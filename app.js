@@ -1,9 +1,12 @@
 const mongoose = require("mongoose");
 const passport = require("passport");
 const express = require("express");
+const users = require("./routes/api/users");
+const tweets = require("./routes/api/tweets");
+const bodyParser = require("body-parser");
+const db = require("./config/keys").mongoURI;
 
 const app = express();
-const db = require("./config/keys").mongoURI;
 mongoose
   .connect(db, { 
       useNewUrlParser: true,
@@ -11,9 +14,6 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
 
-const users = require("./routes/api/users");
-const tweets = require("./routes/api/tweets");
-const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
