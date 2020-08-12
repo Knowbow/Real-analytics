@@ -18,12 +18,7 @@ class Home extends React.Component {
         });
     }
 
-
-
-
-
     render () {
-        
         return (
             <div className="home">
                 <form onSubmit={this.handleSubmit}>
@@ -36,7 +31,7 @@ class Home extends React.Component {
                         <br />
                         <input type="submit" value="Search" />
                     </div>
-                    <GoogMap/>
+                    <GoogMap />
                 </form>
                 
             </div>
