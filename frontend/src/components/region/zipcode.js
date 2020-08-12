@@ -48,17 +48,26 @@ class PropertiesByZip extends React.Component {
 
         if (properties.length>0){
         return (
-        <div>zipcode
+          <div>
+            There are `{properties.length}` properties!
             <ul>
-                {properties.map(property => <li>{property.property_id}</li>)}
+              listing id: `
+              {properties.map((property) => (
+                <li>{property.property_id}</li>
+              ))}
+              ` bedrooms: `
+              {properties.map((property) => (
+                <li>{property.beds}</li>
+              ))}
+              `
             </ul>
-        </div>
-        )
+          </div>
+        );
         
     }
     else {
         return (<div>
-            no work
+            No available properties
         </div>)
     }
 
