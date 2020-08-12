@@ -1,23 +1,29 @@
 import React from 'react';
 import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps'
 
-function Map(props) {
-    return (
-        <GoogleMap
-            defaultZoom={10}
-            defaultCenter={{
-                lat: 40.7591704, lng: -74.0392709
-            }} />
-    )
-}
+// AIzaSyAqVaZ_c7dTTiuDO7b5sjF22xqaWKpBuDI
 
-const WrappedMap = withScriptjs(withGoogleMap(Map))
 
-const GoogMap = () => {
+
+const GoogMap = (props) => {
+    const map = () => {
+        console.log(props)
+        return (
+            <GoogleMap
+                defaultZoom={10}
+                defaultCenter={{
+                    lat: props.lat, lng: props.lng
+                }} />
+        )
+    }
+
+    const WrappedMap = withScriptjs(withGoogleMap(map))
+
+
     return (
         <div style={{ height: "500px", width: "500px" }}>
             <WrappedMap
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBrp4640Vpt8W_tDu6ywctI4IotidQUDdM&callback=initMap`}
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVaZ_c7dTTiuDO7b5sjF22xqaWKpBuDI`}
                 loadingElement={<div style={{ height: "100%" }} />}
                 containerElement={<div style={{ height: "100%" }} />}
                 mapElement={<div style={{ height: "100%" }} />}
