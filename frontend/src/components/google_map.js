@@ -1,9 +1,6 @@
 import React from 'react';
 import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps'
 
-// AIzaSyAqVaZ_c7dTTiuDO7b5sjF22xqaWKpBuDI
-
-
 
 const GoogMap = (props) => {
     const map = () => {
