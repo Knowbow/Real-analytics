@@ -5,12 +5,15 @@ class PropertiesByZip extends React.Component {
     constructor(props){
     super(props);
         this.state = {
-            data : 'default'
+            data : []
         }
+        this.componentDidMount()
+        //this.renderProperties = this.renderProperties.bind(this);
     }
  
 
     componentDidMount() {
+        
         axios({
            method: "GET",
            url: "https://realtor.p.rapidapi.com/properties/v2/list-sold",
@@ -26,26 +29,40 @@ class PropertiesByZip extends React.Component {
              city: "New York City",
              offset: "0",
              state_code: "NY",
-             limit: "200",
+             limit: "20",
              
            },
         }).then((response) =>{
-            debugger
+           
             this.setState({
                 data: response.data.properties
             })
-            debugger
+            
         });
     }
 
     render(){
+        //this.renderProperties();
+        
         const properties = this.state.data
-debugger
+
+        if (properties.length>0){
         return (
         <div>zipcode
-            
+            <ul>
+                {properties.map(property => <li>{property.property_id}</li>)}
+            </ul>
         </div>
-    )};
+        )
+        
+    }
+    else {
+        return (<div>
+            no work
+        </div>)
+    }
+
+};
 }
 
 export default PropertiesByZip;
