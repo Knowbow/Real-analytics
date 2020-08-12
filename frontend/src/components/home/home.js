@@ -6,7 +6,6 @@ import GoogMap from '../google_map'
 class Home extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             zipCode: '',
         };
@@ -18,7 +17,14 @@ class Home extends React.Component {
         });
     }
 
-    render () {
+    zipcodePageLink() {
+        if (this.state.zipCode.length === 5) {
+            return (<Link to={`/zipcode/${this.state.zipCode}`}>{`See Details for ${this.state.zipCode}`}</Link>)
+        } else {
+            return (<h3>Please Enter A Zip Code</h3>)
+        }
+    }
+    render() {
         return (
             <div className="home">
                 <form onSubmit={this.handleSubmit}>
@@ -29,14 +35,13 @@ class Home extends React.Component {
                             placeholder="Zip Code"
                         />
                         <br />
-                        <input type="submit" value="Search" />
+                        {/* <input type="submit" value="Search" /> */}
                     </div>
                     <GoogMap />
+                    {this.zipcodePageLink()}
                 </form>
-                
             </div>
         )
     }
 }
-
 export default Home

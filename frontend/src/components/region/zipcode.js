@@ -32,12 +32,10 @@ class PropertiesByZip extends React.Component {
              limit: "20",
              
            },
-        }).then((response) =>{
-           
+        }).then((response) => {
             this.setState({
                 data: response.data.properties
             })
-            
         });
     }
 
@@ -61,6 +59,7 @@ class PropertiesByZip extends React.Component {
               ))}
               `
             </ul>
+      
           </div>
         );
         
