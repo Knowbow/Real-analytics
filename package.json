@@ -11,7 +11,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "postinstall": "webpack",
+    
     "start": "node app.js",
     "server": "nodemon app.js",
     "server:debug": "nodemon --inspect app.js",
