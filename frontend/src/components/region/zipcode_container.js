@@ -2,9 +2,10 @@ import {connect} from 'react-redux';
 import PropertiesByZip from './zipcode';
 import { fetchZipcode } from '../../actions/zipcode_actions';
 
-const mapStateToProps = ({zipcode}) => {
+const mapStateToProps = (state) => {
+    // debugger
     return {
-        data : zipcode.data
+       properties: state.data.data,
     }
 };
 

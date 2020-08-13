@@ -9,7 +9,6 @@ import AddressSearchBar from '../address_search_bar'
 class Home extends React.Component {
     constructor(props) {
         super(props);
-
         this.state = {
             zipCode: '',
             lat: 40.7826039,
@@ -52,5 +51,4 @@ class Home extends React.Component {
         )
     }
 }
-
 export default Home

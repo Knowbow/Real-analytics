@@ -17,11 +17,11 @@ import HomeContainer from './home/home_container.js';
 
 const App = () => {
     return(   
-     <div>
+    <div>
         <NavBarContainer />
         
         <Switch>
-            <Route path='/zipcode' component={PropertiesByZip} />
+            <Route path='/zipcode/:zipcode' component={PropertiesByZip} />
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
