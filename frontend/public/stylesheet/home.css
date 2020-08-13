@@ -1,0 +1,31 @@
+.home {
+    background-color: grey;
+    height: 850px;
+}
+
+.home span {
+    background-color: darkgrey;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 630px;
+    align-content: center;
+    display: inline;
+    border-radius: 20px;
+}
+
+.home>a {
+    background-color: #3d3df5;
+    text-decoration: none;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: 630px;
+    align-content: center;
+    display: inline;
+    border-radius: 20px;
+}
