@@ -48,3 +48,8 @@
     bottom: 0;
     right: 0;
 }
+
+.home .link a:hover{
+    border-top: darkblue solid 3px;
+    border-right: darkblue solid 3px;
+}
