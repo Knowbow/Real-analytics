@@ -53,55 +53,57 @@ class SignupForm extends React.Component {
   }
 
 
-  render() {
-    return (
-      <div className="session">
-        <div className="home-pic">
-          <img
-            className="r-pic"
-            src="https://i.pinimg.com/originals/df/90/7f/df907ff72483dcee2370f294fc9f03dc.jpg"
-          />
-        </div>
-        <form onSubmit={this.handleSubmit}>
-          <div>
-            <br />
-            <input
-              type="text"
-              value={this.state.email}
-              onChange={this.update("email")}
-              placeholder="Email"
-              className="session-form-sign"
-            />
-            <br />
-            <input
-              type="text"
-              value={this.state.handle}
-              onChange={this.update("handle")}
-              placeholder="Handle"
-              className="session-form-sign"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}
-              placeholder="Password"
-              className="session-form-sign"
-            />
-            <br />
-            <input
-              type="password"
-              value={this.state.password2}
-              onChange={this.update("password2")}
-              placeholder="Confirm Password"
-              className="session-form-sign"
-            />
-            <br />
-            <input className="sessionbtn" type="submit" value="Submit" />
-            {this.renderErrors()}
+
+    render() {
+        return (
+          <div className="session">
+            <div className="home-pic">
+              <img
+                className="r-pic"
+                src="https://i.pinimg.com/originals/df/90/7f/df907ff72483dcee2370f294fc9f03dc.jpg"
+              />
+            </div>
+            <form onSubmit={this.handleSubmit}>
+              <div>
+                <br />
+                <input
+                  type="text"
+                  value={this.state.email}
+                  onChange={this.update("email")}
+                  placeholder="Email"
+                  className="session-form-sign"
+                />
+                <br />
+                <input
+                  type="text"
+                  value={this.state.handle}
+                  onChange={this.update("handle")}
+                  placeholder="Handle"
+                  className="session-form-sign"
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  placeholder="Password"
+                  className="session-form-sign"
+                />
+                <br />
+                <input
+                  type="password"
+                  value={this.state.password2}
+                  onChange={this.update("password2")}
+                  placeholder="Confirm Password"
+                  className="session-form-sign"
+                />
+                <br />
+                <input className="sessionbtn" type="submit" value="Submit" />
+                {this.renderErrors()}
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
+       
     );
   }
 }

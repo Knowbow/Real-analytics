@@ -34,23 +34,18 @@ class LoginForm extends React.Component {
     this.props.login(user).then(() => this.props.history.push("/home"));
   }
 
-  renderErrors() {
-    
-    // if (this.props.errors.length>0) {
-    return (
-      // <span>{window.alert(`${this.props.errors[0]}`)}</span>
-      <span>
-        {Object.values(this.state.errors).map((error, i) => (
-          <span key={`error-${i}`} variant="warning">
-            {window.alert(`${error}`)}
-          </span>
-        ))}
-      </span>
-    );
-    // }
-  }
 
-
+    renderErrors() {
+        return (
+            <ul>
+                {Object.keys(this.props.errors).map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {[error]}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
   render() {
     return (
