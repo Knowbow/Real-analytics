@@ -22,7 +22,7 @@ export default function AddressSearchBar(props) {
     };
 
     return (
-        <div>
+        <div className='search'>
             <PlacesAutocomplete value={address} onChange={setAddress} onSelect={handleSelect} >
                 {({ getInputProps }) => (
                     <div>

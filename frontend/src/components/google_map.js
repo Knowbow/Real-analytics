@@ -18,7 +18,7 @@ const GoogMap = (props) => {
 
 
     return (
-        <div style={{ height: "500px", width: "500px" }}>
+        <div style={{ height: "500px", width: "500px" }} className='home-map'>
             <WrappedMap
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVaZ_c7dTTiuDO7b5sjF22xqaWKpBuDI`}
                 loadingElement={<div style={{ height: "100%" }} />}
