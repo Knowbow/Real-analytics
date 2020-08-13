@@ -2,17 +2,82 @@ import React from 'react';
 import axios from "axios";
 import PriceToRent from "../graphs/price_to_rent";
 import PriceToBuy from '../graphs/price_to_buy';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow, StreetViewPanorama } from "react-google-maps";
 
 class PropertiesByZip extends React.Component {
     constructor(props){
     super(props);
         this.state = {
            saleProperties: [],
-           rentProperties: []
+           rentProperties: [],
+          isOpen: false,
+          markerId: 1,
         }
-       
+      this.handleToggleOpen = this.handleToggleOpen.bind(this);
         //this.renderProperties = this.renderProperties.bind(this);
     }
+
+  googMap(properties) {
+   
+    const map = () => {
+      const onClick = this.handleToggleOpen;
+
+      return (
+        <GoogleMap
+          defaultZoom={15}
+          defaultCenter={{
+            lat: parseFloat(properties[0].address.lat),
+            lng: parseFloat(properties[0].address.lon),
+          }}
+        >
+          {properties.map((marker, i) => {
+            let id = 0;
+
+            return (
+              <Marker
+                key={i}
+                position={{ lat: parseFloat(marker.address.lat), lng: parseFloat(marker.address.lon) }}
+                onClick={() => {
+                  onClick();
+                  this.setState({
+                    markerId: i
+                  });
+                }}
+              >
+                {this.state.isOpen && this.state.markerId === i && (
+                  <div>
+                    <img src={marker.thumbnail} />
+                    <h1>Price: {marker.price}</h1>
+                    <h1>Property id: {marker.property_id}</h1>
+                    
+                  </div>
+                )}
+                
+              </Marker>
+            );
+          })}
+        </GoogleMap>
+      );
+    };
+
+    const WrappedMap = withScriptjs(withGoogleMap(map));
+    return (
+      <div style={{ height: "500px", width: "500px" }}>
+        <WrappedMap
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBrp4640Vpt8W_tDu6ywctI4IotidQUDdM&callback=initMap`}
+          loadingElement={<div style={{ height: "100%" }} />}
+          containerElement={<div style={{ height: "100%" }} />}
+          mapElement={<div style={{ height: "100%" }} />}
+        />
+      </div>
+    );
+  }
+
+  handleToggleOpen() {
+    this.setState({
+      isOpen: true,
+    });
+  }
 
   
     componentDidMount() {
@@ -102,6 +167,7 @@ class PropertiesByZip extends React.Component {
         return (
           <div>
             <div>
+              {this.googMap(this.state.saleProperties)}
               <PriceToRent rentData={rentData} />
               <PriceToBuy saleData={saleData} />
             </div>
