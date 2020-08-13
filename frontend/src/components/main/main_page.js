@@ -3,7 +3,7 @@ import React from 'react';
 class MainPage extends React.Component {
 
     render() {
-        return (
+        return (    
             <div className='main-page'>
                 <div className="home-pic">
                     <img

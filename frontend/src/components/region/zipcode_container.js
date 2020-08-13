@@ -3,7 +3,6 @@ import PropertiesByZip from './zipcode';
 import { fetchZipcode } from '../../actions/zipcode_actions';
 
 const mapStateToProps = (state) => {
-    // debugger
     return {
        properties: state.data.data,
     }
