@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
-    debugger;
+    
     // if (this.props.errors.length>0) {
     return (
       // <span>{window.alert(`${this.props.errors[0]}`)}</span>
@@ -49,6 +49,7 @@ class LoginForm extends React.Component {
     );
     // }
   }
+
 
 
   render() {

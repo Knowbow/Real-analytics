@@ -11,7 +11,6 @@ class SignupForm extends React.Component {
       password2: "",
       errors: [],
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
   }
@@ -37,14 +36,13 @@ class SignupForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
+    
     // if (this.props.errors.length>0) {
     // debugger
-
     return (
       // <span>{window.alert(`${this.props.errors[0]}`)}</span>
       <span>
-        {Object.values(this.state.errors).map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <span key={`error-${i}`} variant="warning">
             {window.alert(`${error}`)}
           </span>
