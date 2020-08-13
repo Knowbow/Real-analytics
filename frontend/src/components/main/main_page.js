@@ -4,7 +4,7 @@ class MainPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='main-page'>
                 <h1>Real Analytics</h1>
                 
                 <footer>

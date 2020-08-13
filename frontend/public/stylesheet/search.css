@@ -1,0 +1,18 @@
+.search {
+    background-color: grey;
+}
+
+.search div {
+    display: flex;
+    justify-content: center;
+}
+.search div input{
+    margin: 30px;
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 239px;
+    background-color: lightgrey;
+    color: white;
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import GoogMap from '../google_map'
+import AddressSearchBar from '../address_search_bar'
+
+
 
 
 class Home extends React.Component {
@@ -8,7 +11,10 @@ class Home extends React.Component {
         super(props);
         this.state = {
             zipCode: '',
+            lat: 40.7826039,
+            lng: -73.9506774
         };
+        this.updateLocInfo = this.updateLocInfo.bind(this)
     }
 
     update(field) {
@@ -17,29 +23,30 @@ class Home extends React.Component {
         });
     }
 
-    zipcodePageLink() {
-        if (this.state.zipCode.length === 5) {
-            return (<Link to={`/zipcode/${this.state.zipCode}`}>{`See Details for ${this.state.zipCode}`}</Link>)
+    updateLocInfo (data) {
+        this.setState({
+            zipCode: data.zipCode,
+            lat: data.lat,
+            lng: data.lng
+        })
+    }
+
+
+
+    linkOptions() {
+        if (this.state.zipCode === '') {
+            return (<span> Please enter a Zip Code or Address</span>)
         } else {
-            return (<h3>Please Enter A Zip Code</h3>)
+            return (<Link to={`/zipcode/${this.state.zipCode}`}>{`Details on ${this.state.zipCode}`}</Link>)
         }
     }
-    render() {
+
+    render () {
         return (
             <div className="home">
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <input type="text"
-                            value={this.state.zipCode}
-                            onChange={this.update('zipCode')}
-                            placeholder="Zip Code"
-                        />
-                        <br />
-                        {/* <input type="submit" value="Search" /> */}
-                    </div>
-                    <GoogMap />
-                    {this.zipcodePageLink()}
-                </form>
+                <AddressSearchBar updateData={this.updateLocInfo}/>
+                <GoogMap lat={this.state.lat} lng={this.state.lng}/>
+                {this.linkOptions(this.state.zipCode)}
             </div>
         )
     }

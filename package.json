@@ -1,9 +1,17 @@
 {
+"engines": {
+
+   "node": "10.14.1", 
+   "npm": "6.4.1" 
+  },
+  
+
   "name": "real-analytics",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "start": "node app.js",
     "server": "nodemon app.js",
     "server:debug": "nodemon --inspect app.js",
@@ -31,10 +39,12 @@
     "mongoose": "^5.9.28",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "recharts": "^1.8.5",
     "unirest": "^0.6.0",
     "validator": "^13.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
+  
 }
