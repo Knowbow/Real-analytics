@@ -20,8 +20,6 @@ class NavBar extends React.Component {
             return (
                 <div className='navbar'>
 
-                    <Link to={`/home`} >Real Analytics</Link>
-
                     <Link className="btn1" to={`/home`} >Real Analytics</Link>
 
                     <button onClick={this.logoutUser}>Logout</button>
