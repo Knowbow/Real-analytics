@@ -1,18 +1,16 @@
 .navbar {
-
-    background-color: #2e2e2e;
-}
-
-     display: flex;
-     color: white;
-     padding-top: 15px;
-     padding-bottom: 15px;
-     width: 100%;
-     margin: 0px; 
+    display: flex;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    margin: 0px; 
     background-color: darkblue;
-    
 }
- .btn{
+
+
+
+.btn{
      color: white;
      text-decoration: none;
      padding-right: 20px;
