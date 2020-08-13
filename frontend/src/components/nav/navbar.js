@@ -14,6 +14,10 @@ class NavBar extends React.Component {
         
     }
 
+    destroyErrors() {
+        this.props.clearErrors();
+    }
+
     getLinks() {
         
         if (this.props.loggedIn) {
@@ -27,10 +31,14 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div className='navbar'>
-                    <Link className="btn1" to={'/signup'}>Signup</Link>
-                    <Link className="btn" to={'/login'}>Login</Link>
-                </div>
+              <div className="navbar">
+                  <Link className="btn1" to={"/signup"}>
+                    Signup
+                  </Link>
+                  <Link className="btn" to={"/login"}>
+                    Login
+                  </Link>
+              </div>
             );
         }
     }
