@@ -5,7 +5,7 @@ import SignupForm from './signup_form';
 const mstp = (state) => {
     return {
         signedIn: state.session.isAuthenticated,
-        errors: state.session.errors
+        errors: state.errors
     };
 };
 
