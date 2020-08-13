@@ -36,16 +36,15 @@ class Home extends React.Component {
 
     linkOptions() {
         if (this.state.zipCode === '') {
-            return (<div>Please enter a Zip Code or Address</div>)
+            return (<span> Please enter a Zip Code or Address</span>)
         } else {
-            return (<div><Link to={`/zipcode/${this.state.zipCode}`}>{`Details on ${this.state.zipCode}`}</Link></div>)
+            return (<Link to={`/zipcode/${this.state.zipCode}`}>{`Details on ${this.state.zipCode}`}</Link>)
         }
     }
 
     render () {
         return (
             <div className="home">
-                <div>{this.state.zipCode}</div>
                 <AddressSearchBar updateData={this.updateLocInfo}/>
                 <GoogMap lat={this.state.lat} lng={this.state.lng}/>
                 {this.linkOptions(this.state.zipCode)}
