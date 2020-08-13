@@ -1,0 +1,30 @@
+.showcontainer{
+    position:relative;
+    margin-bottom:50px;
+}
+.showmap{
+    position:relative;
+    
+    
+}
+.showmap1{
+    position:relative;
+    left:550px;
+    top:-470px;
+    display:flex;
+    flex-direction: column;
+    width: 800px
+}
+.image{
+    width:500px;
+    height:400px;
+    margin-bottom:10px;
+    margin-right:20px;
+}
+.details{
+    margin-bottom:10px;
+    font-family: sans-serif;
+    display:flex;
+    flex-direction: column;
+    font-size:20px
+}

@@ -12,7 +12,9 @@ class Home extends React.Component {
         this.state = {
             zipCode: '',
             lat: 40.7826039,
-            lng: -73.9506774
+            lng: -73.9506774,
+            city: 'New York',
+            st: 'New York'
         };
         this.updateLocInfo = this.updateLocInfo.bind(this)
     }
@@ -27,8 +29,11 @@ class Home extends React.Component {
         this.setState({
             zipCode: data.zipCode,
             lat: data.lat,
-            lng: data.lng
+            lng: data.lng,
+            city: data.city,
+            st: data.st
         })
+
     }
 
 
@@ -37,7 +42,7 @@ class Home extends React.Component {
         if (this.state.zipCode === '') {
             return (<span> Please enter a Zip Code or Address</span>)
         } else {
-            return (<Link to={`/zipcode/${this.state.zipCode}`}>{`Details on ${this.state.zipCode}`}</Link>)
+            return (<Link to={`/zipcode/${this.state.zipCode}`} params={{ city: this.state.city, st: this.state.st }}>{`Details on ${this.state.zipCode}`}</Link>)
         }
     }
 
@@ -52,7 +57,7 @@ class Home extends React.Component {
                 </div>
                 <AddressSearchBar updateData={this.updateLocInfo}/>
                 <GoogMap lat={this.state.lat} lng={this.state.lng}/>
-                <div className='link'>{this.linkOptions(this.state.zipCode)}</div>
+                <div className='link' >{this.linkOptions(this.state.zipCode)}</div>
             </div>
         )
     }
