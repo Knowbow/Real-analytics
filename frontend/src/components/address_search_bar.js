@@ -13,12 +13,33 @@ export default function AddressSearchBar(props) {
         return zip
     }
 
+    function extractCity(results) {
+        let address_components = results[0].address_components
+        const zip = address_components.find((address_component) => address_component.types[0] === 'locality').long_name
+        return zip
+    }
+
+    function extractState(results) {
+        let address_components = results[0].address_components
+        const zip = address_components.find((address_component) => address_component.types[0] === 'administrative_area_level_1').long_name
+        return zip
+    }
+
     const handleSelect = async value => {
         const results = await geocodeByAddress(value);
         const latLng = await getLatLng(results[0]);
         setAddress(value);
         const zip = extractZipCode(results)
-        props.updateData({ zipCode: zip, lat: latLng.lat, lng: latLng.lng})
+        const city = extractCity(results)
+        const st = extractState(results)
+
+        props.updateData({ 
+            zipCode: zip, 
+            lat: latLng.lat, 
+            lng: latLng.lng,
+            city: city,
+            st: st
+        })
     };
 
     return (
