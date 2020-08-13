@@ -37,13 +37,11 @@ class LoginForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
-                {Object.keys(this.props.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {[error]}
-                    </li>
-                ))}
-            </ul>
+          <ul>
+            {Object.values(this.props.errors).map((error, i) => (
+              <li key={`error-${i}`}>{window.alert(`${error}`)}</li>
+            ))}
+          </ul>
         );
     }
 
