@@ -1,4 +1,8 @@
 .navbar {
+
+    background-color: #2e2e2e;
+}
+
      display: flex;
      color: white;
      padding-top: 15px;
@@ -25,3 +29,4 @@
      font-size: 20px;
      font-family: sans-serif;
  }
+

@@ -1,3 +1,8 @@
 .home-map {
-    background-color: red;
+    background-color: grey;
+    height: 500px;
+    width: 800px; 
+    margin-left: 330px;
+    padding-bottom: 50px;
 }
+
