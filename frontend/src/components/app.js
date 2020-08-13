@@ -21,7 +21,7 @@ const App = () => {
         <NavBarContainer />
         
         <Switch>
-            <Route path='/zipcode/:zipcode' component={PropertiesByZip} />
+            <ProtectedRoute path='/zipcode/:zipcode' component={PropertiesByZip} />
             <AuthRoute exact path="/" component={MainPage} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />

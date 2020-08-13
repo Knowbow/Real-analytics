@@ -2,52 +2,57 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 class SignupForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            handle: '',
-            password: '',
-            password2: '',
-            errors: {}
-        };
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      handle: "",
+      password: "",
+      password2: "",
+      errors: [],
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearedErrors = false;
+  }
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearedErrors = false;
-    }
+  update(field) {
+    return (e) =>
+      this.setState({
+        [field]: e.currentTarget.value,
+      });
+  }
 
-    update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
-    }
+  handleSubmit(e) {
+    
+    e.preventDefault();
+    let user = {
+      email: this.state.email,
+      handle: this.state.handle,
+      password: this.state.password,
+      password2: this.state.password2,
+    };
 
-    handleSubmit(e) {
-        e.preventDefault();
-        let user = {
-            email: this.state.email,
-            handle: this.state.handle,
-            password: this.state.password,
-            password2: this.state.password2
-        };
+    this.props.signup(user, this.props.history);
+  }
+
+  renderErrors() {
+    
+    // if (this.props.errors.length>0) {
+    // debugger
+    return (
+      // <span>{window.alert(`${this.props.errors[0]}`)}</span>
+      <span>
+        {Object.values(this.props.errors).map((error, i) => (
+          <span key={`error-${i}`} variant="warning">
+            {window.alert(`${error}`)}
+          </span>
+        ))}
+      </span>
+    );
+    // }
+  }
 
 
-
-        this.props.signup(user, this.props.history)
-        .then(() => this.props.history.push('/login'));
-    }
-
-    renderErrors() {
-        return (
-            <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
 
     render() {
         return (
@@ -98,8 +103,9 @@ class SignupForm extends React.Component {
               </div>
             </form>
           </div>
-        );
-    }
+       
+    );
+  }
 }
 
 export default withRouter(SignupForm);
