@@ -1,30 +1,43 @@
 .showcontainer{
     position:relative;
     margin-bottom:50px;
+    display:flex;
+    left:100px;
+    
 }
 .showmap{
     position:relative;
     
+    padding-left:10px;
+    padding-top:10px
     
 }
 .showmap1{
     position:relative;
     left:550px;
-    top:-470px;
+    top:-500px;
     display:flex;
     flex-direction: column;
-    width: 800px
+    width: 800px;
+    
 }
 .image{
-    width:500px;
+    width:700px;
     height:400px;
     margin-bottom:10px;
     margin-right:20px;
 }
+.detailContainer{
+    display:flex;
+    flex-direction: row;
+}
+
 .details{
     margin-bottom:10px;
+    padding-right:20px;
     font-family: sans-serif;
-    display:flex;
-    flex-direction: column;
     font-size:20px
+}
+.zipcodeContainer{
+    background-color:#f9f6e7;
 }
