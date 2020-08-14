@@ -29,7 +29,7 @@ class PricevsSqrft extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="price/sqrft" fill="green" />
+        <Bar dataKey="priceBysqrft" fill="green" />
       </BarChart>
     );
   }
