@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import PriceToRent from "../graphs/price_to_rent";
 import PriceToBuy from '../graphs/price_to_buy';
+import PricevsSqrft from '../graphs/price_sqrft';
 import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow, StreetViewPanorama } from "react-google-maps";
 import GoogMapSale from '../google_map_sale';
 import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer';
@@ -148,31 +149,31 @@ class PropertiesByZip extends React.Component {
 
   render() {
     const data1 = [
-      { name: "", year_built: 2 },
-      { name: "", year_built: 1, amt: 2210 },
-      { name: "", year_built: 9, amt: 2290 },
-      { name: "", year_built: 3, amt: 2000 },
-      { name: "", year_built: 4, amt: 2181 },
-      { name: "", year_built: 3, amt: 2500 },
-      { name: "", year_built: 4, amt: 2100 },
+      { name: "", year_built: 0 },
+      { name: "", year_built: 0 },
+      { name: "", year_built: 0 },
+      { name: "", year_built: 0 },
+      { name: "", year_built: 0 },
+      { name: "", year_built: 0 },
+      { name: "", year_built: 0 },
     ];
     const data2 = [
-      { name: "", apt_sale_price: 2, amt: 2400 },
-      { name: "", apt_sale_price: 1, amt: 2210 },
-      { name: "", apt_sale_price: 9, amt: 2290 },
-      { name: "", apt_sale_price: 3, amt: 2000 },
-      { name: "", apt_sale_price: 4, amt: 2181 },
-      { name: "", apt_sale_price: 3, amt: 2500 },
-      { name: "", apt_sale_price: 4, amt: 2100 },
+      { name: "", apt_sale_price: 0 },
+      { name: "", apt_sale_price: 0 },
+      { name: "", apt_sale_price: 0 },
+      { name: "", apt_sale_price: 0 },
+      { name: "", apt_sale_price: 0 },
+      { name: "", apt_sale_price: 0 },
+      { name: "", apt_sale_price: 0 },
     ];
     const data3 = [
-      { name: "", apt_sale_price: 2, amt: 2400 },
-      { name: "", apt_sale_price: 1, amt: 2210 },
-      { name: "", apt_sale_price: 9, amt: 2290 },
-      { name: "", apt_sale_price: 3, amt: 2000 },
-      { name: "", apt_sale_price: 4, amt: 2181 },
-      { name: "", apt_sale_price: 3, amt: 2500 },
-      { name: "", apt_sale_price: 4, amt: 2100 },
+      { name: "", price: 0, sqrft: 0 },
+      { name: "", price: 0, sqrft: 0 },
+      { name: "", price: 0, sqrft: 0 },
+      { name: "", price: 0, sqrft: 0 },
+      { name: "", price: 0, sqrft: 0 },
+      { name: "", price: 0, sqrft: 0 },
+      { name: "", price: 0, sqrft: 0 },
     ];
 
     if (this.state.saleProperties.length > 0 && this.state.rentProperties.length > 0) {
@@ -181,14 +182,19 @@ class PropertiesByZip extends React.Component {
         datum = {
           name: this.state.rentProperties[idx].address.line,
           year_built: this.state.rentProperties[idx].year_built,
-          amt: 2500
         }
       ))
       const saleData = data2.map((datum, idx) => (
         datum = {
           name: this.state.saleProperties[idx].address.line,
           apt_sale_price: this.state.saleProperties[idx].price,
-          amt: 2500
+        }
+      ))
+      const vsData = data3.map((datum, idx) => (
+        datum = {
+          name: this.state.saleProperties[idx].address.line,
+          price: this.state.saleProperties[idx].price,
+          sqrft: this.state.saleProperties[idx].building_size.size || 1
         }
       ))
       
@@ -200,6 +206,7 @@ class PropertiesByZip extends React.Component {
             </div>
             <PriceToRent rentData={rentData} />
             <PriceToBuy saleData={saleData} />
+            <PricevsSqrft vsData={vsData} />
           </div>
         </div>
       );
