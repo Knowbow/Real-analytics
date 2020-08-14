@@ -15,6 +15,7 @@
     "react-bootstrap-alert": "^1.0.7",
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
+    "react-image-carousel": "^2.0.18",
     "react-places-autocomplete": "^7.3.0",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
