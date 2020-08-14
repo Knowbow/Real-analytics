@@ -148,22 +148,31 @@ class PropertiesByZip extends React.Component {
 
   render() {
     const data1 = [
-      { name: "Page A", pv: 24000 },
-      { name: "Page B", pv: 1398, amt: 2210 },
-      { name: "Page C", pv: 9800, amt: 2290 },
-      { name: "Page D", pv: 3908, amt: 2000 },
-      { name: "Page E", pv: 4800, amt: 2181 },
-      { name: "Page F", pv: 3800, amt: 2500 },
-      { name: "Page G", pv: 4300, amt: 2100 },
+      { name: "", year_built: 2 },
+      { name: "", year_built: 1, amt: 2210 },
+      { name: "", year_built: 9, amt: 2290 },
+      { name: "", year_built: 3, amt: 2000 },
+      { name: "", year_built: 4, amt: 2181 },
+      { name: "", year_built: 3, amt: 2500 },
+      { name: "", year_built: 4, amt: 2100 },
     ];
     const data2 = [
-      { name: "Page A", pv: 2400, amt: 2400 },
-      { name: "Page B", pv: 1398, amt: 2210 },
-      { name: "Page C", pv: 9800, amt: 2290 },
-      { name: "Page D", pv: 3908, amt: 2000 },
-      { name: "Page E", pv: 4800, amt: 2181 },
-      { name: "Page F", pv: 3800, amt: 2500 },
-      { name: "Page G", pv: 4300, amt: 2100 },
+      { name: "", apt_sale_price: 2, amt: 2400 },
+      { name: "", apt_sale_price: 1, amt: 2210 },
+      { name: "", apt_sale_price: 9, amt: 2290 },
+      { name: "", apt_sale_price: 3, amt: 2000 },
+      { name: "", apt_sale_price: 4, amt: 2181 },
+      { name: "", apt_sale_price: 3, amt: 2500 },
+      { name: "", apt_sale_price: 4, amt: 2100 },
+    ];
+    const data3 = [
+      { name: "", apt_sale_price: 2, amt: 2400 },
+      { name: "", apt_sale_price: 1, amt: 2210 },
+      { name: "", apt_sale_price: 9, amt: 2290 },
+      { name: "", apt_sale_price: 3, amt: 2000 },
+      { name: "", apt_sale_price: 4, amt: 2181 },
+      { name: "", apt_sale_price: 3, amt: 2500 },
+      { name: "", apt_sale_price: 4, amt: 2100 },
     ];
 
     if (this.state.saleProperties.length > 0 && this.state.rentProperties.length > 0) {
@@ -171,14 +180,14 @@ class PropertiesByZip extends React.Component {
       const rentData = data1.map((datum, idx) => (
         datum = {
           name: this.state.rentProperties[idx].address.line,
-          pv: this.state.rentProperties[idx].year_built,
+          year_built: this.state.rentProperties[idx].year_built,
           amt: 2500
         }
       ))
       const saleData = data2.map((datum, idx) => (
         datum = {
           name: this.state.saleProperties[idx].address.line,
-          pv: this.state.saleProperties[idx].price,
+          apt_sale_price: this.state.saleProperties[idx].price,
           amt: 2500
         }
       ))

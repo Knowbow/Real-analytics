@@ -33,7 +33,7 @@ class PriceToRent extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="#8884d8" />
+        <Bar dataKey="year_built" fill="#8884d8" />
       </BarChart>
     );
   }

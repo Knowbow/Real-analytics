@@ -25,7 +25,7 @@ class PriceToBuy extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" fill="blue" />
+        <Bar dataKey="apt_sale_price" fill="blue" />
       </BarChart>
     );
   }
