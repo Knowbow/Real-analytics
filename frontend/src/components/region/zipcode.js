@@ -15,16 +15,44 @@ class PropertiesByZip extends React.Component {
       rentProperties: [],
       isOpen: false,
       markerId: 1,
+      saleAverage: 40000,
+      sqftAverage: 400
     }
     this.handleToggleOpen = this.handleToggleOpen.bind(this);
+    this.averageSale = this.averageSale.bind(this);
+    this.averageSqft = this.averageSqft.bind(this);
     //this.renderProperties = this.renderProperties.bind(this);
+  }
+  averageSale(){
+    var total = 0;
+    for (var i = 0; i < this.state.saleProperties.length; i++) {
+      total += this.state.saleProperties[i].price;
+    }
+    var avg = total / this.state.saleProperties.length;
+    this.setState({
+      saleAverage: avg,
+    });
+  }
+  averageSqft() {
+    var total = 0;
+    var count =0;
+    for (var i = 0; i < this.state.saleProperties.length; i++) {
+      if(this.state.saleProperties[i].building_size)
+      total += this.state.saleProperties[i].price/this.state.saleProperties[i].building_size.size;
+      count +=1;
+    }
+    var avg = total / count;
+    this.setState({
+      sqftAverage: avg,
+    });
   }
 
   googMap(properties) {
 
     const map = () => {
       const onClick = this.handleToggleOpen;
-
+      const saleavg = this.averageSale;
+      const salesqft = this.averageSqft;
       return (
         <GoogleMap
           defaultZoom={14}
@@ -33,6 +61,7 @@ class PropertiesByZip extends React.Component {
             lng: parseFloat(properties[0].address.lon),
           }}
         >
+
           {properties.map((marker, i) => {
             let id = 0;
 
@@ -42,6 +71,8 @@ class PropertiesByZip extends React.Component {
                 position={{ lat: parseFloat(marker.address.lat), lng: parseFloat(marker.address.lon) }}
                 onClick={() => {
                   onClick();
+                  saleavg();
+                  salesqft();
                   this.setState({
                     markerId: i
                   });
@@ -53,19 +84,29 @@ class PropertiesByZip extends React.Component {
                     <img className="image" src={marker.thumbnail} />
                     <div className="detailContainer">
                       <h1 className="details">Price:</h1>
-                      <h1 className='details'>{marker.price}</h1>
-                      <h1 className="details">Property type: {marker.prop_type}</h1>
-                      <h1 className="details">Address: {marker.address.line}, {marker.address.city}</h1>
+                      <h1 className='details1'>{marker.price}</h1>
+                      <h1 className="details">Average price in community:</h1>
+                      <h1 className="details1">${this.state.saleAverage.toFixed(2)}</h1>
+                      <h1 className="details">Address: </h1>
+                      <h1 className='details1'>{marker.address.line}, {marker.address.city}</h1>
                     </div>
                     <div className="detailContainer">
-                      <h1 className="details">Bedrooms: {marker.beds}</h1>
-                      <h1 className="details">Bathrooms: {marker.baths} </h1>
+                      <h1 className="details">Bedrooms:</h1>
+                      <h1 className="details1">{marker.beds}</h1>
+                      <h1 className="details">Bathrooms:</h1>
+                      <h1 className="details1">{marker.baths}</h1>
+                      <h1 className="details">Property type: </h1>
+                      <h1 className='details1'>{marker.prop_type}</h1>
                     </div>
                     
                     {marker.building_size && (
                       <div className="detailContainer">
-                        <h1 className="details">Size: {marker.building_size.size} sqft</h1> 
-                        <h1 className="details">Price/sqft: ${(marker.price / marker.building_size.size).toFixed(2)}</h1>
+                        <h1 className="details">Size:</h1> 
+                        <h1 className="details1">{marker.building_size.size} sqft</h1> 
+                        <h1 className="details">Price/sqft:</h1>
+                        <h1 className="details1">${(marker.price / marker.building_size.size).toFixed(2)}</h1>   
+                        <h1 className="details">Average price/sqft in community:</h1>
+                        <h1 className="details1">${this.state.sqftAverage.toFixed(2)}</h1>
                     </div>
                     )}
                   </div>
