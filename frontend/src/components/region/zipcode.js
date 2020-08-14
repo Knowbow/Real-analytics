@@ -236,12 +236,12 @@ class PropertiesByZip extends React.Component {
         if (this.state.saleProperties[idx].building_size) {
           return datum = {
             name: this.state.saleProperties[idx].address.line,
-            priceBysqrft: this.state.saleProperties[idx].price / this.state.saleProperties[idx].building_size.size
+            priceBysqrft: this.state.sqftAverage
         } 
         }
         return datum = {
           name: this.state.saleProperties[idx].address.line,
-          priceBysqrft: this.state.sqftAverage
+          priceBysqrft: this.state.saleProperties[idx].price / this.state.saleProperties[idx].building_size.size
         }
       })
       debugger
