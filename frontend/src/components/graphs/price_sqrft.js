@@ -10,17 +10,13 @@ import {
   Legend,
 } from "recharts";
 
-
-
-class PriceToRent extends PureComponent {
-
-  
+class PricevsSqrft extends PureComponent {
   render() {
     return (
       <BarChart
-        width={1000}
+        width={1400}
         height={600}
-        data={this.props.rentData}
+        data={this.props.vsData}
         margin={{
           top: 5,
           right: 30,
@@ -33,10 +29,11 @@ class PriceToRent extends PureComponent {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="year_built" fill="#8884d8" />
+        <Bar dataKey="price" fill="green" />
+        <Bar dataKey="sqrft" fill="light-green" />
       </BarChart>
     );
   }
 }
 
-export default PriceToRent;
+export default PricevsSqrft;
