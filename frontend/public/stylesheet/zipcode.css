@@ -2,8 +2,8 @@
     position:relative;
     margin-bottom:50px;
     display:flex;
-    left:100px;
-    
+    left:60px;
+    padding-bottom:50px;
 }
 .showmap{
     position:relative;
@@ -26,17 +26,36 @@
     height:400px;
     margin-bottom:10px;
     margin-right:20px;
+    padding-left:50px;
 }
 .detailContainer{
     display:flex;
     flex-direction: row;
+    padding-top: 10px;
+    border-top: 1px solid #808080;
 }
 
 .details{
     margin-bottom:10px;
     padding-right:20px;
+    padding-left:20px;
     font-family: sans-serif;
-    font-size:20px
+    font-size:20px;
+    
+    color: #A9A9A9;
+    font-size: 18px;
+    
+}
+.details1{
+    margin-bottom:10px;
+    padding-right:20px;
+    padding-left:20px;
+    font-family: sans-serif;
+    font-size:20px;
+    border-right: 1px solid #808080;
+    color: black;
+    font-size: 18px;
+    
 }
 .zipcodeContainer{
     background-color:#f9f6e7;
