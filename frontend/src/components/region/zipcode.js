@@ -231,18 +231,20 @@ class PropertiesByZip extends React.Component {
           apt_sale_price: this.state.saleProperties[idx].price,
         }
       ))
+      
       const vsData = data3.map((datum, idx) => {
-        if (this.state.saleProperties[idx].building_size.size === undefined ) {
+        if (this.state.saleProperties[idx].building_size) {
           return datum = {
             name: this.state.saleProperties[idx].address.line,
-            priceBysqrft: this.state.saleProperties[idx].price / this.state.sqrft.avg
+            priceBysqrft: this.state.saleProperties[idx].price / this.state.saleProperties[idx].building_size.size
         } 
         }
         return datum = {
           name: this.state.saleProperties[idx].address.line,
-          priceBy: this.state.saleProperties[idx].price / this.state.saleProperties[idx].building_size.size
+          priceBysqrft: this.state.sqftAverage
         }
       })
+      debugger
       
       return (
         <div className="zipcodeContainer">
