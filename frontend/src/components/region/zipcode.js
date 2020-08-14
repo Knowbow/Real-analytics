@@ -46,12 +46,27 @@ class PropertiesByZip extends React.Component {
                   });
                 }}
               >
+                
                 {this.state.isOpen && this.state.markerId === i && (
                   <div className="showmap1">
                     <img className="image" src={marker.thumbnail} />
-                <h1 className="details">Price: {marker.price}   Bedrooms: {marker.beds}   Bathrooms: {marker.baths}    </h1>
-                <h1 className="details">   Property type: {marker.prop_type}  Address: {marker.address.line}, {marker.address.city}</h1>
-                    {marker.building_size && (<div className="details">Size: {marker.building_size.size} sqft Price/sqft: ${(marker.price / marker.building_size.size).toFixed(2)}</div>)}
+                    <div className="detailContainer">
+                      <h1 className="details">Price:</h1>
+                      <h1 className='details'>{marker.price}</h1>
+                      <h1 className="details">Property type: {marker.prop_type}</h1>
+                      <h1 className="details">Address: {marker.address.line}, {marker.address.city}</h1>
+                    </div>
+                    <div className="detailContainer">
+                      <h1 className="details">Bedrooms: {marker.beds}</h1>
+                      <h1 className="details">Bathrooms: {marker.baths} </h1>
+                    </div>
+                    
+                    {marker.building_size && (
+                      <div className="detailContainer">
+                        <h1 className="details">Size: {marker.building_size.size} sqft</h1> 
+                        <h1 className="details">Price/sqft: ${(marker.price / marker.building_size.size).toFixed(2)}</h1>
+                    </div>
+                    )}
                   </div>
                 )}
 
@@ -89,7 +104,7 @@ class PropertiesByZip extends React.Component {
       headers: {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "realtor.p.rapidapi.com",
-        "x-rapidapi-key": "9f5e44ce1amsh4ef90f73eab73dep1e2faajsna9353dcf7fdd",
+        "x-rapidapi-key": "27ccc3fdecmsha70735fe154e0b5p196cc0jsn13aaa62d67df",
         useQueryString: true,
       },
       params: {
@@ -156,7 +171,7 @@ class PropertiesByZip extends React.Component {
       const rentData = data1.map((datum, idx) => (
         datum = {
           name: this.state.rentProperties[idx].address.line,
-          pv: this.state.rentProperties[idx].community.price_max,
+          pv: this.state.rentProperties[idx].year_built,
           amt: 2500
         }
       ))
@@ -169,7 +184,7 @@ class PropertiesByZip extends React.Component {
       ))
       
       return (
-        <div>
+        <div className="zipcodeContainer">
           <div>
             <div className="showcontainer">
             {this.googMap(this.state.saleProperties)}
