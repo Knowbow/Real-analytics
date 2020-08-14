@@ -208,13 +208,13 @@ class PropertiesByZip extends React.Component {
       { name: "", apt_sale_price: 0 },
     ];
     const data3 = [
-      { name: "", price: 0, sqrft: 0 },
-      { name: "", price: 0, sqrft: 0 },
-      { name: "", price: 0, sqrft: 0 },
-      { name: "", price: 0, sqrft: 0 },
-      { name: "", price: 0, sqrft: 0 },
-      { name: "", price: 0, sqrft: 0 },
-      { name: "", price: 0, sqrft: 0 },
+      { name: "", priceBysqrft: 0 },
+      { name: "", priceBysqrft: 0 },
+      { name: "", priceBysqrft: 0 },
+      { name: "", priceBysqrft: 0 },
+      { name: "", priceBysqrft: 0 },
+      { name: "", priceBysqrft: 0 },
+      { name: "", priceBysqrft: 0 },
     ];
 
     if (this.state.saleProperties.length > 0 && this.state.rentProperties.length > 0) {
@@ -235,14 +235,12 @@ class PropertiesByZip extends React.Component {
         if (this.state.saleProperties[idx].building_size.size === undefined ) {
           return datum = {
             name: this.state.saleProperties[idx].address.line,
-            price: this.state.saleProperties[idx].price,
-            sqrft: this.state.sqrft.avg
+            priceBysqrft: this.state.saleProperties[idx].price / this.state.sqrft.avg
         } 
         }
         return datum = {
           name: this.state.saleProperties[idx].address.line,
-          price: this.state.saleProperties[idx].price,
-          sqrft: this.state.saleProperties[idx].building_size.size
+          priceBy: this.state.saleProperties[idx].price / this.state.saleProperties[idx].building_size.size
         }
       })
       
