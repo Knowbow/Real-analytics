@@ -81,7 +81,7 @@ class PropertiesByZip extends React.Component {
     return (
       <div className="showmap" style={{ height: "500px", width: "500px" }}>
         <WrappedMap
-          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBrp4640Vpt8W_tDu6ywctI4IotidQUDdM&callback=initMap`}
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVaZ_c7dTTiuDO7b5sjF22xqaWKpBuDI&callback=initMap`}
           loadingElement={<div style={{ height: "100%" }} />}
           containerElement={<div style={{ height: "100%" }} />}
           mapElement={<div style={{ height: "100%" }} />}
@@ -104,7 +104,7 @@ class PropertiesByZip extends React.Component {
       headers: {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "realtor.p.rapidapi.com",
-        "x-rapidapi-key": "27ccc3fdecmsha70735fe154e0b5p196cc0jsn13aaa62d67df",
+        "x-rapidapi-key": "01196eb35cmsh8dd8a853106467fp16cd9djsn16e974239b03",
         useQueryString: true,
       },
       params: {
@@ -127,7 +127,7 @@ class PropertiesByZip extends React.Component {
       headers: {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "realtor.p.rapidapi.com",
-        "x-rapidapi-key": "9f5e44ce1amsh4ef90f73eab73dep1e2faajsna9353dcf7fdd",
+        "x-rapidapi-key": "01196eb35cmsh8dd8a853106467fp16cd9djsn16e974239b03",
         useQueryString: true,
       },
       params: {
