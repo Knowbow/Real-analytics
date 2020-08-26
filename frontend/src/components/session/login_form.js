@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
+import { clearErrors } from '../../actions/session_actions';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this)
   }
 
   update(field) {
@@ -36,6 +38,7 @@ class LoginForm extends React.Component {
 
 
     renderErrors() {
+      // debugger
         return (
           <ul>
             {Object.values(this.props.errors).map((error, i) => (
@@ -43,7 +46,22 @@ class LoginForm extends React.Component {
             ))}
           </ul>
         );
-    }
+  }
+  
+  demoLogin(){
+    // debugger
+    clearErrors()
+    // debugger
+    let user = {
+      email: "test@test.com",
+      password: "testPassword"
+    };
+
+    // debugger
+    this.props.login(user)
+    // debugger
+    // clearErrors()
+  }
 
   render() {
     return (
@@ -78,9 +96,10 @@ class LoginForm extends React.Component {
               type="submit"
               value="Submit"
             />
-
+            <button className="sessionbtn" onClick={this.demoLogin}>Demo Login</button>
             {this.renderErrors()}
           </div>
+
         </form>
       </div>
     );
