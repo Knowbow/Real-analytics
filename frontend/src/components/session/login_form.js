@@ -42,25 +42,21 @@ class LoginForm extends React.Component {
         return (
           <ul>
             {Object.values(this.props.errors).map((error, i) => (
-              <li key={`error-${i}`}>{window.alert(`${error}`)}</li>
+              // <li key={`error-${i}`}>{window.alert(`${error}`)}</li>
+              <li key={`error-${i}`}>{error}</li>
             ))}
           </ul>
         );
   }
   
   demoLogin(){
-    // debugger
     clearErrors()
-    // debugger
     let user = {
       email: "test@test.com",
       password: "testPassword"
     };
 
-    // debugger
     this.props.login(user)
-    // debugger
-    // clearErrors()
   }
 
   render() {
