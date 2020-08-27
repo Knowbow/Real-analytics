@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import GoogMap from '../google_map'
 import AddressSearchBar from '../address_search_bar'
-
+import { Marker } from "react-google-maps";
 
 
 
@@ -34,6 +34,7 @@ class Home extends React.Component {
             st: data.st
         })
 
+
     }
 
 
@@ -56,7 +57,9 @@ class Home extends React.Component {
                     />
                 </div>
                 <AddressSearchBar updateData={this.updateLocInfo}/>
-                <GoogMap lat={this.state.lat} lng={this.state.lng}/>
+                <GoogMap lat={this.state.lat} lng={this.state.lng}>
+                    
+                </GoogMap>
                 <div className='link' >{this.linkOptions(this.state.zipCode)}</div>
             </div>
         )
