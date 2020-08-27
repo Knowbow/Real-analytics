@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
+import { clearErrors } from '../../actions/session_actions';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -14,6 +15,11 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLogin = this.demoLogin.bind(this)
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -31,19 +37,29 @@ class LoginForm extends React.Component {
       password: this.state.password,
     };
 
-    this.props.login(user).then(() => this.props.history.push("/home"));
+    this.props.login(user);
   }
 
 
-    renderErrors() {
-        return (
-          <ul>
-            {Object.values(this.props.errors).map((error, i) => (
-              <li key={`error-${i}`}>{window.alert(`${error}`)}</li>
-            ))}
-          </ul>
-        );
-    }
+  renderErrors() {
+    return (
+      <ul>
+        {Object.values(this.props.errors).map((error, i) => (
+          <li key={`error-${i}`}>{error}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    let user = {
+      email: "test@test.com",
+      password: "testPassword"
+    };
+
+    this.props.login(user)
+  }
 
   render() {
     return (
@@ -74,13 +90,13 @@ class LoginForm extends React.Component {
             <br />
             <input
               className="sessionbtn"
-              // onClick={() => this.renderErrors()}
               type="submit"
               value="Submit"
             />
-
+            <button className="sessionbtn" onClick={this.demoLogin}>Demo Login</button>
             {this.renderErrors()}
           </div>
+
         </form>
       </div>
     );
