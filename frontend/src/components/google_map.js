@@ -11,7 +11,7 @@ const GoogMap = (props) => {
                     lat: props.lat, lng: props.lng
                 }}
                  >
-                    {/* <Marker position={{ lat: props.lat, lng: props.lng }}></Marker> */}
+                    <Marker position={{ lat: props.lat, lng: props.lng }}></Marker>
                  </GoogleMap>
         )
     }
