@@ -1,5 +1,5 @@
 import React from 'react';
-import { GoogleMap, withScriptjs, withGoogleMap } from 'react-google-maps'
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from 'react-google-maps'
 
 
 const GoogMap = (props) => {
@@ -10,7 +10,9 @@ const GoogMap = (props) => {
                 defaultCenter={{
                     lat: props.lat, lng: props.lng
                 }}
-                 />
+                 >
+                    <Marker position={{ lat: props.lat, lng: props.lng }}></Marker>
+                 </GoogleMap>
         )
     }
 
