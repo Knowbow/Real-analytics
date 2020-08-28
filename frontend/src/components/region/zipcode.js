@@ -262,7 +262,7 @@ class PropertiesByZip extends React.Component {
     }
     else {
       return (<div>
-        No available properties
+        Searching for properties
       </div>)
     }
   };
