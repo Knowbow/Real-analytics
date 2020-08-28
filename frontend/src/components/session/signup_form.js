@@ -9,7 +9,7 @@ class SignupForm extends React.Component {
       handle: "",
       password: "",
       password2: "",
-      errors: [],
+      errors: this.props.errors
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
@@ -19,6 +19,7 @@ class SignupForm extends React.Component {
     return (e) =>
       this.setState({
         [field]: e.currentTarget.value,
+        errors: []
       });
   }
 
@@ -36,32 +37,28 @@ class SignupForm extends React.Component {
   }
 
   renderErrors() {
-    // if (this.props.errors.length>0) {
-    // debugger
-    return (
-      // <span>{window.alert(`${this.props.errors[0]}`)}</span>
-      <span>
-        {Object.values(this.props.errors).map((error, i) => (
-          <span key={`error-${i}`} variant="warning">
-            {window.alert(`${error}`)}
-          </span>
-        ))}
-      </span>
-    );
-    // }
+    if (this.state.errors !== []) {
+      return (
+        <ul>
+          {Object.values(this.state.errors).map((error, i) => (
+            <li key={`error-${i}`}>{window.alert(`${error}`)}</li>
+          ))}
+        </ul>
+      );
+    } else {
+      return (
+        <></>
+      )
+    }
   }
 
-    renderErrors() {
-        return (
-            <ul>
-                {Object.values(this.props.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {window.alert([error])}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+  // flushErrors(e) {
+  //   e.preventDefault();
+  //   this.setState({
+  //     errors: []
+  //   });
+  // }
+
 
     render() {
         return (
@@ -109,6 +106,7 @@ class SignupForm extends React.Component {
                 <br />
                 <input className="sessionbtn" type="submit" value="Submit" />
                 {this.renderErrors()}
+              
               </div>
             </form>
           </div>

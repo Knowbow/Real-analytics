@@ -233,7 +233,7 @@ class PropertiesByZip extends React.Component {
       ))
       
       const vsData = data3.map((datum, idx) => {
-        if (this.state.saleProperties[idx].building_size) {
+        if (this.state.saleProperties[idx].building_size === undefined) {
           return datum = {
             name: this.state.saleProperties[idx].address.line,
             priceBysqrft: this.state.sqftAverage

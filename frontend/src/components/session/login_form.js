@@ -9,7 +9,7 @@ class LoginForm extends React.Component {
     this.state = {
       email: "",
       password: "",
-      errors: [],
+      errors: this.props.errors,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,6 +20,7 @@ class LoginForm extends React.Component {
     return (e) =>
       this.setState({
         [field]: e.currentTarget.value,
+        errors: []
       });
   }
 
@@ -38,7 +39,7 @@ class LoginForm extends React.Component {
     renderErrors() {
         return (
           <ul>
-            {Object.values(this.props.errors).map((error, i) => (
+            {Object.values(this.state.errors).map((error, i) => (
               <li key={`error-${i}`}>{window.alert(`${error}`)}</li>
             ))}
           </ul>
