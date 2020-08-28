@@ -28,3 +28,14 @@
      font-family: sans-serif;
  }
 
+ .logout {
+     margin-left: 0;
+ }
+
+ .logout:hover {
+     cursor: pointer;
+ }
+
+ #pad {
+     margin-left: 20px;
+ }
