@@ -9,7 +9,7 @@ class SignupForm extends React.Component {
       handle: "",
       password: "",
       password2: "",
-      errors: [],
+      errors: this.props.errors
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearedErrors = false;
@@ -23,6 +23,7 @@ class SignupForm extends React.Component {
     return (e) =>
       this.setState({
         [field]: e.currentTarget.value,
+        errors: []
       });
   }
 

@@ -25,8 +25,8 @@ class NavBar extends React.Component {
                 <div className='navbar'>
 
                     <Link className="btn1" to={`/home`} >Real Analytics</Link>
-
-                    <button onClick={this.logoutUser}>Logout</button>
+                    
+                    <a className='btn1 logout' onClick={this.logoutUser}>|<span id='pad'></span>Logout</a>
                 </div>
             );
         } else {

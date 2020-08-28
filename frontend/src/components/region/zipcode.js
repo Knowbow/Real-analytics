@@ -231,6 +231,7 @@ class PropertiesByZip extends React.Component {
           apt_sale_price: this.state.saleProperties[idx].price,
         }
       ))
+      
       const vsData = data3.map((datum, idx) => {
         if (this.state.saleProperties[idx].building_size === undefined ) {
           return datum = {
@@ -243,6 +244,7 @@ class PropertiesByZip extends React.Component {
           priceBysqrft: this.state.saleProperties[idx].price / this.state.saleProperties[idx].building_size.size
         }
       })
+      debugger
       
       return (
         <div className="zipcodeContainer">
