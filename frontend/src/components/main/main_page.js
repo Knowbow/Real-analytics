@@ -18,16 +18,16 @@ class MainPage extends React.Component {
               <div className="team title">The Team</div>
               <div className="team">
                 <div className="profile">
-                  <img className="profile picture brder-style" src=""></img>
+                  <img className="profile picture brder-style" src="https://media-exp1.licdn.com/dms/image/C4E03AQE2tFt--S4rVQ/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=Rk_fKvfeNO-y7QmXctFNdhIA1_eYI_6_sGQpImam_9Q"></img>
                   <h4> Tony Wu </h4>
                   <p> Team Lead </p>
                   
                     <ul className="links">
                       <li>
-                        <a href='' target="_blank" className='bttn'><i className="fa fa-linkedin position" aria-hidden="true"></i></a>
+                      <a href='https://www.linkedin.com/in/tony-wu-76769286/' target="_blank" className='bttn'><i className="fa fa-linkedin position" aria-hidden="true"></i></a>
                       </li>
                       <li>
-                        <a href='' target="_blank" className='bttn'><i className="fa fa-github position" aria-hidden="true"></i></a>
+                      <a href='https://github.com/knowbow' target="_blank" className='bttn'><i className="fa fa-github position" aria-hidden="true"></i></a>
                       </li>
                     </ul>
                   
