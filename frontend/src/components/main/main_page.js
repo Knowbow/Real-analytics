@@ -18,7 +18,7 @@ class MainPage extends React.Component {
               <div className="team title">The Team</div>
               <div className="team">
                 <div className="profile">
-                  <img className="profile picture brder-style" src="https://media-exp1.licdn.com/dms/image/C4E03AQE2tFt--S4rVQ/profile-displayphoto-shrink_400_400/0?e=1604534400&v=beta&t=Rk_fKvfeNO-y7QmXctFNdhIA1_eYI_6_sGQpImam_9Q"></img>
+                  <img className="profile-picT" src="head.jpeg"></img>
                   <h4> Tony Wu </h4>
                   <p> Team Lead </p>
                   
@@ -33,29 +33,29 @@ class MainPage extends React.Component {
                   
                 </div>
                 <div className="profile">
-                  <img className="profile picture brder-style" src=""></img>
+                  <img className="profile-pic" src=""></img>
                   <h4> Andrew Elmore </h4>
                   <p> Frontend Lead</p>
                   <ul className="links">
                     <li>
-                      <a href='' target="_blank" className='bttn'><i className="fa fa-linkedin position" aria-hidden="true"></i></a>
+                      <a href='https://www.linkedin.com/in/akelmore/' target="_blank" className='bttn'><i className="fa fa-linkedin position" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a href='' target="_blank" className='bttn'><i className="fa fa-github position" aria-hidden="true"></i></a>
+                      <a href='https://github.com/andrew-elmore' target="_blank" className='bttn'><i className="fa fa-github position" aria-hidden="true"></i></a>
                     </li>
                   </ul>
                 </div>
                 <div className="profile">
                 
-                  <img className="profile picture brder-style" src="EdGar.png" alt='ed'></img>
+                  <img className="profile-pic" src="EdGar.png" alt='ed'></img>
                   <h4> Edward Garrett </h4>
                   <p> Backend Lead </p>
                   <ul className="links">
                     <li>
-                      <a href='https://www.linkedin.com/feed/' target="_blank" className='bttn'><i className="fa fa-linkedin position" aria-hidden="true"></i></a>
+                      <a href='https://www.linkedin.com/in/edward-garrett-9b54b5b1/' target="_blank" className='bttn'><i className="fa fa-linkedin position" aria-hidden="true"></i></a>
                     </li>
                     <li>
-                      <a href='https://github.com/' target="_blank" className='bttn'><i className="fa fa-github position" aria-hidden="true"></i></a>
+                      <a href='https://github.com/egarrett3' target="_blank" className='bttn'><i className="fa fa-github position" aria-hidden="true"></i></a>
                     </li>
                   </ul>
                 </div>
