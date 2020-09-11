@@ -2,7 +2,8 @@
 
 ## Background and Overview
 
-The biggest financial decision many individuals will make involves purchasing real estate. Be it their first house or secondary investment properties, lots of information need to be considered before making a purchase. There are a HUGE numbers of factors! 
+The biggest financial decision many individuals will make involves purchasing real estate. Be it their first house or secondary investment properties, lots of information need to be considered before making a purchase. There are a HUGE numbers of factors! \
+https://real-analytics.herokuapp.com/
 
 This application is focused on providing a web application that allows user to visualize and aggregate data of their choosing to see how homes from different regions compare to one another. 
 
@@ -50,7 +51,31 @@ User auth dada will be stored in documents on MongoDB. Certain Real estate data 
 
 #### Frontend
 React/node.js should be able to display retrieved API data to display both current statistics as well display a trending statistic that includes historical data. React libraries for data visualization will be essential for polishing display pages.
+![GitHub Logo](./ra-pa.png)
+```
+axios({
+      method: "GET",
+      url: "https://realtor.p.rapidapi.com/properties/v2/list-for-rent",
+      headers: {
+        "content-type": "application/octet-stream",
+        
+        useQueryString: true,
+      },
+      params: {
+        sort: "relevance",
+        city: this.props.match.params.city,
+        state_code: this.props.match.params.st,
+        limit: "7",
+        offset: "0",
+        postal_code: this.props.match.params.zipcode,
+      },
+    }).then(response => {
+      this.setState({
+        rentProperties: response.data.properties
+      })
+    });
 
+```
 
 ## Group members and project breakdown
 
