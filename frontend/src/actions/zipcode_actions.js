@@ -1,9 +1,9 @@
-import { fetchForSale } from '../util/api_util';
+//import { fetchForSale } from '../util/api_util';
 import axios from "axios";
 export const RECEIVE_ZIPCODE = 'RECEIVE_ZIPCODE';
 
 export const receiveZipcode = data => {
-    debugger
+    
     return {
     type: RECEIVE_ZIPCODE,
     data

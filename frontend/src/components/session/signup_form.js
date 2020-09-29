@@ -75,6 +75,7 @@ class SignupForm extends React.Component {
           <img
             className="r-pic"
             src="https://i.pinimg.com/originals/df/90/7f/df907ff72483dcee2370f294fc9f03dc.jpg"
+            alt=''
           />
         </div>
         <form onSubmit={this.handleSubmit}>

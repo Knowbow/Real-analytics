@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import GoogMap from '../google_map'
 import AddressSearchBar from '../address_search_bar'
-import { Marker } from "react-google-maps";
+//import { Marker } from "react-google-maps";
 
 
 
@@ -54,7 +54,8 @@ class Home extends React.Component {
                     <img
                         className="r-pic"
                         src="https://i.pinimg.com/originals/df/90/7f/df907ff72483dcee2370f294fc9f03dc.jpg"
-                    />
+                        alt='house'
+                   />
                 </div>
                 <AddressSearchBar updateData={this.updateLocInfo}/>
                 <GoogMap lat={this.state.lat} lng={this.state.lng}>

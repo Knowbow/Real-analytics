@@ -3,9 +3,9 @@ import axios from "axios";
 import PriceToRent from "../graphs/price_to_rent";
 import PriceToBuy from '../graphs/price_to_buy';
 import PricevsSqrft from '../graphs/price_sqrft';
-import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow, StreetViewPanorama } from "react-google-maps";
-import GoogMapSale from '../google_map_sale';
-import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer';
+import { GoogleMap, withScriptjs, withGoogleMap, Marker} from "react-google-maps";
+//import GoogMapSale from '../google_map_sale';
+//import MarkerClusterer from 'react-google-maps/lib/components/addons/MarkerClusterer';
 
 class PropertiesByZip extends React.Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class PropertiesByZip extends React.Component {
         >
 
           {properties.map((marker, i) => {
-            let id = 0;
+            //let id = 0;
 
             return (
               <Marker
@@ -81,7 +81,7 @@ class PropertiesByZip extends React.Component {
                 
                 {this.state.isOpen && this.state.markerId === i && (
                   <div className="showmap1">
-                    <img className="image" src={marker.thumbnail} />
+                    <img className="image" src={marker.thumbnail} alt=''/>
                     <div className="detailContainer">
                       <h1 className="details">Price:</h1>
                       <h1 className='details1'>{marker.price}</h1>
@@ -244,7 +244,7 @@ class PropertiesByZip extends React.Component {
           priceBysqrft: this.state.saleProperties[idx].price / this.state.saleProperties[idx].building_size.size
         }
       })
-      debugger
+      
       
       return (
         <div className="zipcodeContainer">

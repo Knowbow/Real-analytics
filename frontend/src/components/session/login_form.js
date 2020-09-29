@@ -1,7 +1,7 @@
 import React from 'react';
-import { Alert } from "react-bootstrap";
+//import { Alert } from "react-bootstrap";
 import { withRouter } from 'react-router-dom';
-import { clearErrors } from '../../actions/session_actions';
+//import { clearErrors } from '../../actions/session_actions';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -69,6 +69,7 @@ class LoginForm extends React.Component {
           <img
             className="r-pic"
             src="https://i.pinimg.com/originals/df/90/7f/df907ff72483dcee2370f294fc9f03dc.jpg"
+            alt=''
           />
         </div>
         <form onSubmit={this.handleSubmit}>
