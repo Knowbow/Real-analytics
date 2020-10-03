@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
-  
+  Label,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -29,11 +29,13 @@ class PriceToRent extends PureComponent {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="name">
+          
+        </XAxis>
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="year_built" fill="#8884d8" />
+        <Bar dataKey="year_built" label="Address" fill="#8884d8" />
       </BarChart>
     );
   }

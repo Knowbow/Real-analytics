@@ -4,6 +4,7 @@ import PlacesAutocomplete, {
     getLatLng
 } from "react-places-autocomplete";
 
+
 export default function AddressSearchBar(props) {
     const [address, setAddress] = React.useState("");
 
@@ -15,12 +16,25 @@ export default function AddressSearchBar(props) {
 
     function extractCity(results) {
         let address_components = results[0].address_components
-        const zip = address_components.find((address_component) => address_component.types[0] === 'locality').long_name
+        if (
+          address_components.find(
+            (address_component) => address_component.types[0] === "locality"
+          )
+        ){
+          const zip = address_components.find(
+            (address_component) => address_component.types[0] === "locality"
+          ).long_name;
+        debugger
         return zip
+          }
+          else{
+              return 0;
+          }
     }
 
     function extractState(results) {
         let address_components = results[0].address_components
+      
         const zip = address_components.find((address_component) => address_component.types[0] === 'administrative_area_level_1').long_name
         return zip
     }
@@ -30,8 +44,8 @@ export default function AddressSearchBar(props) {
         const latLng = await getLatLng(results[0]);
         setAddress(value);
         const zip = extractZipCode(results)
-        const city = extractCity(results)
-        const st = extractState(results)
+        const city = 0;//extractCity(results)
+        const st = 0;//extractState(results)
 
         props.updateData({ 
             zipCode: zip, 

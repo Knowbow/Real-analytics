@@ -48,22 +48,23 @@ class Home extends React.Component {
     }
 
     render () {
+        
         return (
-            <div className="home">
-                <div className="home-pic">
-                    <img
-                        className="r-pic"
-                        src="https://i.pinimg.com/originals/df/90/7f/df907ff72483dcee2370f294fc9f03dc.jpg"
-                        alt='house'
-                   />
-                </div>
-                <AddressSearchBar updateData={this.updateLocInfo}/>
-                <GoogMap lat={this.state.lat} lng={this.state.lng}>
-                    
-                </GoogMap>
-                <div className='link' >{this.linkOptions(this.state.zipCode)}</div>
+          <div className="home">
+            <div className="home-pic">
+              <img
+                className="r-pic"
+                src="https://i.pinimg.com/originals/df/90/7f/df907ff72483dcee2370f294fc9f03dc.jpg"
+                alt="house"
+              />
             </div>
-        )
+            <div>
+              <AddressSearchBar updateData={this.updateLocInfo} />
+              <GoogMap lat={this.state.lat} lng={this.state.lng}></GoogMap>
+            </div>
+            <div className="link">{this.linkOptions(this.state.zipCode)}</div>
+          </div>
+        );
     }
 }
 export default Home

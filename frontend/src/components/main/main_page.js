@@ -62,7 +62,7 @@ class MainPage extends React.Component {
                     rel="noopener noreferrer"
                     alt=""
                   ></img>
-                  <h4> Andrew Elm </h4>
+                  <h4> Andrew Elmore </h4>
                   <p> Frontend Lead</p>
                   <ul className="links">
                     <li>

@@ -48,7 +48,7 @@ const GoogMapSale = (props) => {
     return (
         <div style={{ height: "500px", width: "500px" }}>
             <WrappedMap
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyBrp4640Vpt8W_tDu6ywctI4IotidQUDdM&callback=initMap`}
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=yBrp4640Vpt8W_tDu6ywctI4IotidQUDdM&callback=initMap`}
                 loadingElement={<div style={{ height: "100%" }} />}
                 containerElement={<div style={{ height: "100%" }} />}
                 mapElement={<div style={{ height: "100%" }} />}

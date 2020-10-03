@@ -16,19 +16,19 @@ const GoogMap = (props) => {
         )
     }
 
-    const WrappedMap = withScriptjs(withGoogleMap(map))
+    const WrappedMap = (withGoogleMap(map))
 
 
     return (
-        <div className='home-map'>
-            <WrappedMap
-                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVaZ_c7dTTiuDO7b5sjF22xqaWKpBuDI`}
-                loadingElement={<div style={{ height: "100%" }} />}
-                containerElement={<div style={{ height: "100%" }} />}
-                mapElement={<div style={{ height: "100%" }} />}
-            />
-        </div> 
-    )
+      <div className="home-map">
+        <WrappedMap
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=AIzaSyAqVaZ_c7dTTiuDO7b5sjF22xqaWKpBuDI`}
+          loadingElement={<div style={{ height: "100%" }} />}
+          containerElement={<div style={{ height: "100%" }} />}
+          mapElement={<div style={{ height: "100%" }} />}
+        />
+      </div>
+    );
 }
 
 export default GoogMap
