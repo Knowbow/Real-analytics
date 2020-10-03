@@ -12,7 +12,7 @@ class MainPage extends React.Component {
                 alt="background"
               />
             </div>
-            <h1>Real Analytics</h1>
+            <h1 className='title11'>Real Analytics</h1>
 
             <footer>
               <div className="team title">
