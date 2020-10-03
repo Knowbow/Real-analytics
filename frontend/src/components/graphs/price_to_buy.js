@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import {
-  BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend,
+  BarChart,Bar,XAxis,YAxis,CartesianGrid,Tooltip,Legend,Label,
 } from "recharts";
 
 
@@ -16,19 +16,21 @@ class PriceToBuy extends PureComponent {
         margin={{
           top: 5,
           right: 30,
-          left: 20,
+          left: 100,
           bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis>
+          <Label value="Sale Price" position="left" />
+        </YAxis>
         <Tooltip />
         <Legend />
-        <Bar dataKey="apt_sale_price" fill="blue" />
+        <Bar dataKey="apt_sale_price" name="Address" fill="blue" />
       </BarChart>
     );
   }
 }
-
+//
 export default PriceToBuy;

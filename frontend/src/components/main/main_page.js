@@ -15,7 +15,9 @@ class MainPage extends React.Component {
             <h1>Real Analytics</h1>
 
             <footer>
-              <div className="team title">The Team</div>
+              <div className="team title">
+                The Team
+              </div>
               <div className="team">
                 <div className="profile">
                   <img

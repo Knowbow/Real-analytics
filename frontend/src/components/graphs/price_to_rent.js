@@ -24,18 +24,18 @@ class PriceToRent extends PureComponent {
         margin={{
           top: 5,
           right: 30,
-          left: 20,
+          left: 100,
           bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name">
-          
-        </XAxis>
-        <YAxis />
+        <XAxis dataKey="name"></XAxis>
+        <YAxis>
+          <Label value="Year built" position="left" />
+        </YAxis>
         <Tooltip />
         <Legend />
-        <Bar dataKey="year_built" label="Address" fill="#8884d8" />
+        <Bar dataKey="year_built" name="Address" fill="#8884d8" />
       </BarChart>
     );
   }

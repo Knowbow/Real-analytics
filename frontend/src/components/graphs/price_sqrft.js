@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import {
   BarChart,
   Bar,
-  
+  Label,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -20,19 +20,21 @@ class PricevsSqrft extends PureComponent {
         margin={{
           top: 5,
           right: 30,
-          left: 20,
+          left: 100,
           bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis>
+          <Label value="Price/Sqft" position="left" />
+        </YAxis>
         <Tooltip />
         <Legend />
-        <Bar dataKey="priceBysqrft" fill="green" />
+        <Bar dataKey="priceBysqrft" name="Address" fill="green" />
       </BarChart>
     );
   }
 }
-
+//
 export default PricevsSqrft;
